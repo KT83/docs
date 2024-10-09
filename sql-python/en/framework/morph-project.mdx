@@ -1,0 +1,34 @@
+---
+title: 'morph_project.yml'
+---
+
+The `morph_project.yml` is the configuration file used when running the Morph framework; a file with default values is automatically created when the Morph project is launched.
+
+```yaml
+default_connection: MORPH_BUILTIN_DB
+source_paths:
+- src
+template_paths:
+- templates
+
+```
+
+## Parameters
+
+<ParamField body="default_connection" type="string" default="MORPH_BUILTIN_DB">
+Specify the default DB connection; if connection is not specified in the config function in the SQL file, this connection is automatically used.
+
+If you want to configure it, set the connection name as well as the configuration to connection in the config.
+</ParamField>
+
+<ParamField body="source_paths" type="string" default="src">
+Specify the source path.
+
+Files under the directory specified as the source path are treated as executable source code on Morph.
+</ParamField>
+
+<ParamField body="template_paths" type="string" default="templates">
+Specify the template path.
+
+For more information on how to use templates, see [documentation here](/docs/en/workspace/template).
+</ParamField>

@@ -1,0 +1,74 @@
+---
+title: 'output_paths'
+---
+
+The results of executing SQL and Python source code are temporarily stored in the VM so that they can be used as input for subsequent processing.
+
+The format of the stored results depends on the format of the result of the respective process. The output destination and format can also be changed by specifying the output_paths argument of the SQL config function or Python `@morph.func`.
+
+## Output format
+
+### SQL
+
+By default, it is saved as a `.parquet` file. It is also possible to specify csv in the `output_paths`.
+
+### Python
+
+The format specified in the `@morph.func` argument output_type or, if not specified, automatically deduced from the return value.
+The format of the file to be saved depends on the type of the value returned by the function, as follows.
+
+#### DataFrame
+
+By default, it is saved as a `.parquet` file. It is also possible to specify csv in `output_paths`.
+
+### Plotly and Matplotlib charts.
+
+By default, both `.html` and `.png` files are saved. It is also possible to limit the extension to be saved with `output_paths`.
+
+<Tip>
+By specifying an output extension, such as `output_paths=[‘_private/sample.png’]`, it can be changed so that only files with the specified extension are output.
+</Tip>
+
+For more information on how to code in the case of visualisation, see [documentation here](/sql-python/en/python/quickstart-python).
+
+### JSON
+
+If the return value is a dict or list, it is saved as a `.json` file.
+
+### markdown
+
+If the return value is str and `output_type` is `markdown`, the file is saved as a `.md` file.
+
+### Text
+
+If the return value is str and no `output_type` is specified in particular, it is saved as a `.txt` file.
+
+## How to specify `output_paths`
+
+You can specify output paths by specifying paths in `output_paths` as follows.
+
+```sql
+{{
+    config(
+        name="sample_sql",
+        description="Sameple SQL for output_paths",
+        output_paths=[
+            "_private/{name}/{now()}{ext()}",
+            "_private/{name}/{now()}.csv"
+        ]
+    )
+}}
+
+select * from sample;
+```
+
+### Placeholders
+
+In output_paths, the following placeholder can be used to allow dynamic specification of output destinations.
+
+|Placeholder|Description|
+|---|---|
+|`name`|Value of `name` specified in `config`, `@morph.func`|
+|`now()`|Output date in the format Y/M/D - H/M/S|
+|`unix()`|Time stamp (in milliseconds)|
+|`ext()`|Auto-estimated extensions|

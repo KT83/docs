@@ -1,0 +1,29 @@
+---
+title: 'Job Scheduling'
+---
+
+This section describes a mechanism for scheduling and executing data pipelines created in SQL or Python.
+
+Functions such as `load_data` in SQL and `@morph.load_data()` in Python allow multiple processes to be built as a pipeline.
+Scheduled execution of this pipeline can automate recurring tasks such as daily sales totals.
+
+As shown below, when you open the SQL/Python file, ‘Run Schedules’ appears in the tab on the right-hand side.
+Here you can check the jobs currently set up and register new jobs.
+
+<img
+    src="/assets/images/docs/workspace-job-schedule.png"
+    alt="Job Schedule"
+/>
+
+## Job scheduling settings
+
+Job scheduling should be configured for the last function in the pipeline.
+The `load_data` function also executes the function to be loaded at runtime, so any data pipeline can be executed periodically by specifying the last function in the data pipeline.
+
+The execution date and time can be set flexibly, such as ‘every day’ or ‘only on weekdays’. The execution time can also be set in 15-minute increments.
+
+<iframe
+    src="https://www.loom.com/embed/6460e39061be4df78ecffb5a56225951?sid=74b921ff-bb21-4d2e-8dd6-50cb872f2606"
+    controls
+    className="w-full aspect-video"
+></iframe>
