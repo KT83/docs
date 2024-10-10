@@ -1,0 +1,40 @@
+---
+title: '@morph.func'
+---
+
+It can be registered as a function that can be executed in morph by annotating it with `@morph.func`.
+
+```python
+@morph.func(
+    name="example_python_cell",
+    description="Example Python cell",
+)
+def get_data_from_database(context):
+    # write your code here
+	return pd.DataFrame({
+        "name": ["John", "Doe"],
+        "age": [20, 30],
+    })
+```
+
+## Parameters
+
+<ParamField body="name" type="string" default="function name">
+Process name, can also be used as an alias when calling from another file.
+</ParamField>
+
+<ParamField body="description" type="string">
+Can describe the process
+</ParamField>
+
+<ParamField body="output_paths" type="array: string" default="['_private/{name}/{now()}{ext()}']">
+Output paths for the result files.
+
+See [here](/sql-python/en/framework/output-paths) for description.
+</ParamField>
+
+<ParamField body="output_type" type="string">
+Specification of the format of the output results. If not specified, the system automatically estimates the result.
+
+Values: `dataframe`, `visualization`, `markdown`, `json`
+</ParamField>

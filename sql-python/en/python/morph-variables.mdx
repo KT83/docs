@@ -1,0 +1,22 @@
+---
+title: '@morph.variables'
+---
+
+Variables can be declared that are passed externally with the annotation `@morph.variables`.
+
+```python
+@morph.func
+@morph.variables("var1")
+def get_data_from_database(context):
+	var1_data = context.vars["var1"]
+    # write your code here using var1_data
+	return pd.DataFrame({})
+```
+
+## Parameters
+
+<ParamField body="name" type="string" required>
+Additional arguments can be added when executing functions.
+
+You can pass arguments from an mdx file or specify arguments when executing a command.
+</ParamField>

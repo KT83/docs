@@ -1,15 +1,15 @@
 {
   "$schema": "https://mintlify.com/schema.json",
-  "name": "Starter Kit",
+  "name": "Docs",
   "logo": {
-    "dark": "/logo/dark.svg",
-    "light": "/logo/light.svg"
+    "dark": "/assets/images/morph_logo_svg_w.svg",
+    "light": "/assets/images/morph_logo_svg.svg"
   },
   "favicon": "/favicon.svg",
   "colors": {
-    "primary": "#0D9373",
-    "light": "#07C983",
-    "dark": "#0D9373",
+    "primary": "#030712",
+    "light": "#f9fafb",
+    "dark": "#030712",
     "anchors": {
       "from": "#0D9373",
       "to": "#07C983"
@@ -21,71 +21,319 @@
       "url": "mailto:hi@mintlify.com"
     }
   ],
+  "versions": ["English", "日本語"],
   "topbarCtaButton": {
-    "name": "Dashboard",
-    "url": "https://dashboard.mintlify.com"
+    "name": "Website",
+    "url": "https://www.morphdb.io"
   },
   "tabs": [
     {
-      "name": "API Reference",
-      "url": "api-reference"
+      "name": "Guides",
+      "url": "docs"
+    },
+    {
+      "name": "SQL & Python",
+      "url": "sql-python"
+    },
+    {
+      "name": "Data Application",
+      "url": "data-application"
+    },
+    {
+      "name": "Integrations",
+      "url": "integrations"
     }
   ],
   "anchors": [
     {
-      "name": "Documentation",
-      "icon": "book-open-cover",
-      "url": "https://mintlify.com/docs"
-    },
-    {
-      "name": "Community",
-      "icon": "slack",
-      "url": "https://mintlify.com/community"
-    },
-    {
       "name": "Blog",
       "icon": "newspaper",
-      "url": "https://mintlify.com/blog"
+      "url": "https://www.morphdb.io/blogs"
     }
   ],
   "navigation": [
     {
-      "group": "Get Started",
+      "group": "Getting Started",
+      "version": "English",
       "pages": [
-        "introduction",
-        "quickstart",
-        "development"
+        "docs/en/getting-started/why-morph",
+        "docs/en/getting-started/how-morph-works"
       ]
     },
     {
-      "group": "Essentials",
+      "group": "Workspace",
+      "version": "English",
       "pages": [
-        "essentials/markdown",
-        "essentials/code",
-        "essentials/images",
-        "essentials/settings",
-        "essentials/navigation",
-        "essentials/reusable-snippets"
+        "docs/en/workspace/about-workspace",
+        "docs/en/workspace/environment",
+        "docs/en/workspace/vscode-extensions",
+        "docs/en/workspace/sql-python",
+        "docs/en/workspace/template",
+        "docs/en/workspace/visualization",
+        "docs/en/workspace/data-application",
+        "docs/en/workspace/about-canvas",
+        "docs/en/workspace/job-schedule"
       ]
     },
     {
-      "group": "API Documentation",
+      "group": "Data Sources",
+      "version": "English",
       "pages": [
-        "api-reference/introduction"
+        "docs/en/data-sources/builtin-postgres",
+        "docs/en/data-sources/connectors"
       ]
     },
     {
-      "group": "Endpoint Examples",
+      "group": "Morph AI",
+      "version": "English",
       "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/delete"
+        "docs/en/morph-ai/features-of-morphai"
+      ]
+    },
+    {
+      "group": "Rest API",
+      "version": "English",
+      "pages": [
+        "docs/en/rest-api/overview",
+        "docs/en/rest-api/authentication",
+        "docs/en/rest-api/quickstart"
+      ]
+    },
+    {
+      "group": "Team Setting",
+      "version": "English",
+      "pages": [
+        "docs/en/team-setting/credit",
+        "docs/en/team-setting/manage-members"
+      ]
+    },
+    {
+      "group": "SQL",
+      "version": "English",
+      "pages": [
+        "sql-python/en/sql/quickstart-sql",
+        "sql-python/en/sql/config",
+        "sql-python/en/sql/load_data",
+        "sql-python/en/sql/variables"
+      ]
+    },
+    {
+      "group": "Python",
+      "version": "English",
+      "pages": [
+        "sql-python/en/python/quickstart-python",
+        "sql-python/en/python/how-to-install-pip",
+        "sql-python/en/python/env-vars",
+        "sql-python/en/python/morph-global-context",
+        "sql-python/en/python/morph-func",
+        "sql-python/en/python/morph-load_data",
+        "sql-python/en/python/morph-variables"
+      ]
+    },
+    {
+      "group": "Framework",
+      "version": "English",
+      "pages": [
+        "sql-python/en/framework/overview",
+        "sql-python/en/framework/morph-project",
+        "sql-python/en/framework/output-paths"
+      ]
+    },
+    {
+      "group": "CLI Commands",
+      "version": "English",
+      "pages": [
+        "sql-python/en/cli-commands/run",
+        "sql-python/en/cli-commands/create",
+        "sql-python/en/cli-commands/compile",
+        "sql-python/en/cli-commands/clean",
+        "sql-python/en/cli-commands/template",
+        "sql-python/en/cli-commands/init",
+        "sql-python/en/cli-commands/new",
+        "sql-python/en/cli-commands/print"
+      ]
+    },
+    {
+      "group": "Getting Started",
+      "version": "English",
+      "pages": [
+        "data-application/en/how-to-build-data-application",
+        "data-application/en/mdx-setup",
+        "data-application/en/data-components",
+        "data-application/en/use-variables",
+        "data-application/en/custom-components"
+      ]
+    },
+    {
+      "group": "Connect SQL",
+      "version": "English",
+      "pages": [
+        "integrations/en/database/snowflake",
+        "integrations/en/database/bigquery",
+        "integrations/en/database/redshift",
+        "integrations/en/database/mysql",
+        "integrations/en/database/postgresql"
+      ]
+    },
+    {
+      "group": "Connect SaaS",
+      "version": "English",
+      "pages": [
+        "integrations/en/saas/airtable",
+        "integrations/en/saas/attio",
+        "integrations/en/saas/freee",
+        "integrations/en/saas/hubspot",
+        "integrations/en/saas/intercom",
+        "integrations/en/saas/linear",
+        "integrations/en/saas/mailchimp",
+        "integrations/en/saas/notion",
+        "integrations/en/saas/salesforce",
+        "integrations/en/saas/stripe"
+      ]
+    },
+    {
+      "group": "Getting Started",
+      "version": "日本語",
+      "pages": [
+        "docs/ja/getting-started/why-morph",
+        "docs/ja/getting-started/how-morph-works"
+      ]
+    },
+    {
+      "group": "Workspace",
+      "version": "日本語",
+      "pages": [
+        "docs/ja/workspace/about-workspace",
+        "docs/ja/workspace/environment",
+        "docs/ja/workspace/vscode-extensions",
+        "docs/ja/workspace/sql-python",
+        "docs/ja/workspace/template",
+        "docs/ja/workspace/visualization",
+        "docs/ja/workspace/data-application",
+        "docs/ja/workspace/about-canvas",
+        "docs/ja/workspace/job-schedule"
+      ]
+    },
+    {
+      "group": "Data Sources",
+      "version": "日本語",
+      "pages": [
+        "docs/ja/data-sources/builtin-postgres",
+        "docs/ja/data-sources/connectors"
+      ]
+    },
+    {
+      "group": "Morph AI",
+      "version": "日本語",
+      "pages": [
+        "docs/ja/morph-ai/features-of-morphai"
+      ]
+    },
+    {
+      "group": "Rest API",
+      "version": "日本語",
+      "pages": [
+        "docs/ja/rest-api/overview",
+        "docs/ja/rest-api/authentication",
+        "docs/ja/rest-api/quickstart"
+      ]
+    },
+    {
+      "group": "Team Setting",
+      "version": "日本語",
+      "pages": [
+        "docs/ja/team-setting/credit",
+        "docs/ja/team-setting/manage-members"
+      ]
+    },
+    {
+      "group": "SQL",
+      "version": "日本語",
+      "pages": [
+        "sql-python/ja/sql/quickstart-sql",
+        "sql-python/ja/sql/config",
+        "sql-python/ja/sql/load_data",
+        "sql-python/ja/sql/variables"
+      ]
+    },
+    {
+      "group": "Python",
+      "version": "日本語",
+      "pages": [
+        "sql-python/ja/python/quickstart-python",
+        "sql-python/ja/python/how-to-install-pip",
+        "sql-python/ja/python/env-vars",
+        "sql-python/ja/python/morph-global-context",
+        "sql-python/ja/python/morph-func",
+        "sql-python/ja/python/morph-load_data",
+        "sql-python/ja/python/morph-variables"
+      ]
+    },
+    {
+      "group": "Framework",
+      "version": "日本語",
+      "pages": [
+        "sql-python/ja/framework/overview",
+        "sql-python/ja/framework/morph-project",
+        "sql-python/ja/framework/output-paths"
+      ]
+    },
+    {
+      "group": "CLI Commands",
+      "version": "日本語",
+      "pages": [
+        "sql-python/ja/cli-commands/run",
+        "sql-python/ja/cli-commands/create",
+        "sql-python/ja/cli-commands/compile",
+        "sql-python/ja/cli-commands/clean",
+        "sql-python/ja/cli-commands/template",
+        "sql-python/ja/cli-commands/init",
+        "sql-python/ja/cli-commands/new",
+        "sql-python/ja/cli-commands/print"
+      ]
+    },
+    {
+      "group": "Getting Started",
+      "version": "日本語",
+      "pages": [
+        "data-application/ja/how-to-build-data-application",
+        "data-application/ja/mdx-setup",
+        "data-application/ja/data-components",
+        "data-application/ja/use-variables",
+        "data-application/ja/custom-components"
+      ]
+    },
+    {
+      "group": "SQLデータベースに接続する",
+      "version": "日本語",
+      "pages": [
+        "integrations/ja/database/snowflake",
+        "integrations/ja/database/bigquery",
+        "integrations/ja/database/redshift",
+        "integrations/ja/database/mysql",
+        "integrations/ja/database/postgresql"
+      ]
+    },
+    {
+      "group": "SaaSに接続する",
+      "version": "日本語",
+      "pages": [
+        "integrations/ja/saas/airtable",
+        "integrations/ja/saas/attio",
+        "integrations/ja/saas/freee",
+        "integrations/ja/saas/hubspot",
+        "integrations/ja/saas/intercom",
+        "integrations/ja/saas/linear",
+        "integrations/ja/saas/mailchimp",
+        "integrations/ja/saas/notion",
+        "integrations/ja/saas/salesforce",
+        "integrations/ja/saas/stripe"
       ]
     }
   ],
   "footerSocials": {
-    "x": "https://x.com/mintlify",
-    "github": "https://github.com/mintlify",
-    "linkedin": "https://www.linkedin.com/company/mintsearch"
+    "x": "https://x.com/morphdbHQ",
+    "github": "https://github.com/useMorph",
+    "linkedin": "https://www.linkedin.com/company/morphdbhq"
   }
 }

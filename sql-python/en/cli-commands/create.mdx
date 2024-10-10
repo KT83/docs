@@ -1,0 +1,33 @@
+---
+title: 'create'
+---
+
+The `morph create` command is used to build new files in a project.
+
+```shell
+morph create [OPTIONS] FILENAME
+```
+
+FILENAME should be the name of the file to be saved in the project.
+Here, specify the path from the project root, such as `src/test.py`, or specify an absolute path.
+
+If no template is specified, the CLI will automatically create an initially generated file corresponding to the extension.
+
+## Options
+
+### --template (optional)
+
+If the file is created from a template, specify the name of the template you wish to specify.
+
+The following options are only available when creating from a template.
+Each of these options can be used to automatically replace strings in the corresponding template.
+
+- `--name`: `${MORPH_NAME}`
+- `--description`: `${MORPH_DESCRIPTION}`
+- `--parent-name`: `${MORPH_PARENT_NAME}`
+- `--connection`: `${MORPH_CONNECTION}`
+
+```shell
+# morph create <作成するファイル> —template <template name>
+$ morph create src/test.py --template test
+```
