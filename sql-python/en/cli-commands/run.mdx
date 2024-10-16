@@ -1,0 +1,26 @@
+---
+title: 'run'
+---
+
+The `morph run` command is used to run the Morph source code.
+
+## Options
+
+### `-d [key]=[value]`
+
+The `-d` option is an option that allows you to specify runtime argument values for Morph source code.
+
+The runtime values can be changed dynamically by giving the arguments specified in [@morph.variables](/sql-python/en/python/morph-variables).
+
+```
+$ morph run example_sql_cell -d var1=value1
+```
+
+## Examples
+
+```shell
+workdir $ morph run example_sql_cell
+2024-10-08 04:46:32,550 [INFO] Running sql file: /home/morph/workdir/src/example_sql_cell.sql
+2024-10-08 04:46:32,865 [INFO] Cell output saved to: /home/morph/workdir/_private/example_sql_cell/20241008_044632.parquet
+2024-10-08 04:46:33,009 [INFO] Successfully ran sql file: /home/morph/workdir/src/example_sql_cell.sql
+```

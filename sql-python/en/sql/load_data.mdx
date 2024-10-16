@@ -1,0 +1,27 @@
+---
+title: 'load_data'
+---
+
+The load_data function can be used to treat the results of other cells as if they were tables.
+
+You can access the result file after running the `users` cell as a table if you write.
+
+<Warning>
+If load_data is used in the from clause, the SQL syntax must use DuckDB syntax.
+</Warning>
+
+```sql
+{{
+	config(
+		name="user_data_with_age_over_20",
+		description="User data with age over 20",
+	)
+}}
+
+select
+	*
+from
+	{{ load_data("users") }}
+where
+	age > 20
+```

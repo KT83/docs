@@ -1,0 +1,42 @@
+---
+title: 'config'
+---
+
+Configuration values can be written in jinja in SQL as follows:
+
+```sql
+{{
+	config(
+		name="test",
+		description="this is test sql statement",
+		output_paths=[
+			"_private/{name}/{now()}{ext()}"
+		],
+		connection="your_connection_slug"
+	)
+}}
+
+select 1 as test
+```
+
+## Parameters
+
+<ParamField body="name" type="string" default="SQL filename">
+Process name, can also be used as an alias when calling from another file.
+</ParamField>
+
+<ParamField body="description" type="string">
+Description of the process
+</ParamField>
+
+<ParamField body="output_paths" type="array: string" default="['_private/{name}/{now()}{ext()}']">
+Output paths for the result files.
+
+See [here](/sql-python/en/framework/output-paths) for description.
+</ParamField>
+
+<ParamField body="connection" type="string" default="default_connection configured in morph_project.yml">
+Destination of connections other than the builtin registered on the screen (optional).
+
+※ If not specified, it is set to built-in postgresql.
+</ParamField>

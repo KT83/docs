@@ -1,0 +1,35 @@
+---
+title: 'MorphGlobalContext'
+---
+
+`MorphGlobalContext` is a type of context variable that can be given as an argument to functions that can be executed in Morph.
+
+The context can automatically receive data from Morph annotations, results from other functions or external arguments.
+
+|property|Description|
+|---|---|
+|data|Stores the output results of functions annotated with `@morph.load_data`.|
+|vars|Stores arguments of functions annotated with `@morph.variables`.|
+
+### Example of use
+
+By annotating with `load_data` and `variables`, it is possible to accept a context as an argument to a function.
+See the respective description pages for information on how to use these functions.
+
+```python
+import pandas as pd
+
+import morph
+from morph import MorphGlobalContext
+
+@morph.func(
+    name="example_python_cell",
+    description="Example Python cell",
+)
+@morph.load_data("example_sql_cell")
+@morph.variables("var1")
+def get_data_from_database(context: MorphGlobalContext):
+	sql_result_df = context.data["example_sql_cell"]
+	var1_data = context.vars["var1"]
+	return pd.DataFrame({})
+```
